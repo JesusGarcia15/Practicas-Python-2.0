@@ -1,8 +1,8 @@
 from numpy import*
-a = array([[4,2,5],[2,5,8],[5,4,3]], float)
+a = array([[4,2,5],[2,5,8],[2,4,3]], float)
 print(a)
 print("")
-b = array([[60.7],[92.9],[56.3]], float)
+b = array([[18.0],[27.30],[16.20]], float)
 print(b)
 print("")
 d = array([[1,0,0],[0,1,0],[0,0,1]], float)
