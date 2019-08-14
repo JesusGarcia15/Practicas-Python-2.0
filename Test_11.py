@@ -1,4 +1,4 @@
-from Lineal import lagrange
+from Interpolacion import lagrange
 import pylab as pl
 x=[2,4,5]
 y=[5,6,3]

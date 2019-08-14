@@ -1,5 +1,6 @@
 from numpy import*
 from sympy import*
+import numpy as np
 def gaussjordan1(a,b):
     n = len(b)
     c = concatenate([a,b],axis = 1)
@@ -86,8 +87,7 @@ def jacobim (a,b,x,e,m):
     t=x.copy()
     for k in range(m):
         x=jacobi(a,b,x)
-        d=linalg.norm(array(x)-array(t))
-        print(x)
+        d=np.linalg.norm(np.array(x)-np. array(t))
         if d<e:
             return [x,k]
         else:
@@ -109,7 +109,7 @@ def gaussidelm (a,b,x,e,m):
     t=x.copy()
     for k in range(m):
         x=gaussidel(a,b,x)
-        d=linalg.norm(array(x)-array(t))
+        d=np.linalg.norm(np.array(x)-np. array(t))
         if d<e:
             return [x,k]
         else:
@@ -136,3 +136,15 @@ def lagrange(x,y,u=None):
         return v
     else:
         return p.subs(t,u)
+
+def biseccion(f, a, b, e):
+    while b-a>=e:
+        c=(a+b)/2
+        if f(c)==0:
+            return c
+        else:
+            if f(a)*f(c)>0:
+                a=c
+            else:
+                b=c
+    return c
